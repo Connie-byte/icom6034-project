@@ -1,0 +1,66 @@
+.createContainer {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    border: 1px solid #ccc;
+}
+
+input {
+    border: none;
+    width: 100%;
+}
+
+#title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px;
+    align-self: center;
+}
+
+#ideaTitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#description {
+    border: none;
+    height: 200px;
+    width: 100%;
+}
+
+#locationContainer {
+    float: right;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+#tagContainer {
+    flex: 1;
+}
+
+#submitContainer {
+    border-top: 1px solid #ccc;
+}
+
+#submitContainer div {
+    flex-basis: 100px;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+    padding: 15px 0;
+    background-color: #eeeeee;
+}
+
+button {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
