@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('accommodations_images', function (Blueprint $table) {
             $table->id('ImagesId');
-            $table->unsignedBigInteger('accomodationId');
+            $table->unsignedBigInteger('accommodationId');
             $table->string('path', 255);
 
-            $table->foreign('accomodationId')->references('accomodationId')->on('accommodations');
+            $table->foreign('accommodationId')->references('accommodationId')->on('accommodations');
         });
     }
 

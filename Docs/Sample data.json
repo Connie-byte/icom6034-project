@@ -1,0 +1,63 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "user1",
+            "password": "password1",
+            "email": "a@b.com"
+        }
+    ],
+    "accommodations": [
+        {
+            "accommodationId": 1,
+            "name": "Shangri-La Hotel",
+            "startDate": "2015-10-01",
+            "endDate": "2015-10-03",
+            "lat": 1.307,
+            "lng": 103.826,
+            "address": "22 Orange Grove Road, Singapore 258350",
+            "price": 300
+        }
+    ],
+    "accommodations_images":{
+        "imagesId": 1,
+        "accommodationId": 1,
+        "path": "http://www.shangri-la.com/uploadedImages/Shangri-la_Hotels/Shangri-La_Hotel_Singapore/rooms-suites/horizon-club/horizon-club-room-1.jpg"
+    },
+    "ideas": [
+        {
+            "ideaId": 1,
+            "title": "My trip to Singapore",
+            "destination": "Singapore",
+            "lat": 1.404,
+            "lng": 103.793,
+            "startDate": "2015-10-01",
+            "endDate": "2015-10-03",
+            "content": "Singapore is a small island country. It is a very clean and safe place to visit. The food is great and the people are friendly. I would recommend visiting Singapore.",
+            "accommodationId": 1,
+            "userId": "user1"
+        }
+    ],
+    "ideas_images": [
+        {
+            "imagesId": 1,
+            "ideaId": 1,
+            "path": "http://www.yoursingapore.com/content/traveller/en/browse/see-and-do/nature-and-wildlife/singapore-zoo/_jcr_content/par-carousel/carousel_detailpage/carousel/item_1.thumbnail.carousel-img.740.416.jpg"
+        }
+    ],
+    "ideas_tags": [
+        {
+            "tagName" : "food",
+            "ideaId" : 1
+        }
+    ],
+    "ideas_comments": [
+        {
+            "commentId": 1,
+            "ideaId": 1,
+            "userId": 1,
+            "date": "2015-10-01",
+            "content": "Great trip!"
+        }
+    ]
+}

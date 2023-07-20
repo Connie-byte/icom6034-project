@@ -21,11 +21,11 @@ return new class extends Migration
             $table->dateTime('startDate');
             $table->dateTime('endDate');
             $table->string('content', 255);
-            $table->unsignedBigInteger('AccommodationId')->nullable();
+            $table->unsignedBigInteger('accommodationId')->nullable();
             $table->unsignedBigInteger('userId');
             $table->timestamps();
 
-            $table->foreign('AccommodationId')->references('AccomodationId')->on('accommodations');
+            $table->foreign('accommodationId')->references('accommodationId')->on('accommodations');
             $table->foreign('userId')->references('id')->on('users');
         });
     }
