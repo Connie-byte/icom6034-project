@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('ideas_comments', function (Blueprint $table) {
             $table->id('commentId');
             $table->unsignedBigInteger('ideaId');
-            $table->string('username', 50);
+            $table->unsignedBigInteger('userId');
             $table->dateTime('date');
             $table->string('content', 255);
 
             $table->foreign('ideaId')->references('ideaId')->on('ideas');
+            $table->foreign('userId')->references('id')->on('users');
         });
     }
 

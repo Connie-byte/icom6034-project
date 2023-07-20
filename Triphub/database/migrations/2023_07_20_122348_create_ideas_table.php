@@ -22,10 +22,11 @@ return new class extends Migration
             $table->dateTime('endDate');
             $table->string('content', 255);
             $table->unsignedBigInteger('AccommodationId')->nullable();
-            $table->string('username', 255);
+            $table->unsignedBigInteger('userId');
             $table->timestamps();
 
             $table->foreign('AccommodationId')->references('AccomodationId')->on('accommodations');
+            $table->foreign('userId')->references('id')->on('users');
         });
     }
 
