@@ -10,5 +10,5 @@
 
  3. Run the script of `Docs\triphub.sql` in phpMyAdmin console
 
-  ![](.\Docs\img\db3.png)
+ ![](.\Docs\img\db3.png)
  
