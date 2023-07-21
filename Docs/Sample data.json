@@ -9,7 +9,7 @@
     ],
     "accommodations": [
         {
-            "accommodationId": 1,
+            "id": 1,
             "name": "Shangri-La Hotel",
             "startDate": "2015-10-01",
             "endDate": "2015-10-03",
@@ -20,13 +20,13 @@
         }
     ],
     "accommodations_images":{
-        "imagesId": 1,
+        "id": 1,
         "accommodationId": 1,
         "path": "http://www.shangri-la.com/uploadedImages/Shangri-la_Hotels/Shangri-La_Hotel_Singapore/rooms-suites/horizon-club/horizon-club-room-1.jpg"
     },
     "ideas": [
         {
-            "ideaId": 1,
+            "id": 1,
             "title": "My trip to Singapore",
             "destination": "Singapore",
             "lat": 1.404,
@@ -40,20 +40,21 @@
     ],
     "ideas_images": [
         {
-            "imagesId": 1,
+            "id": 1,
             "ideaId": 1,
             "path": "http://www.yoursingapore.com/content/traveller/en/browse/see-and-do/nature-and-wildlife/singapore-zoo/_jcr_content/par-carousel/carousel_detailpage/carousel/item_1.thumbnail.carousel-img.740.416.jpg"
         }
     ],
     "ideas_tags": [
         {
+            "id": 1,
             "tagName" : "food",
             "ideaId" : 1
         }
     ],
     "ideas_comments": [
         {
-            "commentId": 1,
+            "id": 1,
             "ideaId": 1,
             "userId": 1,
             "date": "2015-10-01",

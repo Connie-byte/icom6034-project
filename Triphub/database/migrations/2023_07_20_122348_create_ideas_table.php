@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ideas', function (Blueprint $table) {
-            $table->id('ideaId');
+            $table->id();
             $table->string('title', 50);
             $table->string('destination', 50);
             $table->float('lat');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('userId');
             $table->timestamps();
 
-            $table->foreign('accommodationId')->references('accommodationId')->on('accommodations');
+            $table->foreign('accommodationId')->references('id')->on('accommodations');
             $table->foreign('userId')->references('id')->on('users');
         });
     }
