@@ -1,6 +1,6 @@
 @extends('layout')
 
-<link rel="stylesheet" href="\css\accommodations\index.css">
+<link rel="stylesheet" href="\css\accommodations\show.css">
 <link rel="stylesheet" href="\css\global.css">
 
 @section('content')
@@ -14,7 +14,7 @@
     <div id="rightColumn">
         <div id="accommodationContainer">
 
-            <div id="accommodationTitle"> Title</div>
+            <div id="accommodationTitle"> {{ $accommodation->name }}</div>
 
             <div class="row">
                 <div id="accommodationDate">StartDate to EndDate</div>

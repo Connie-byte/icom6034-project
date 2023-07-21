@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Accommodation;
 
 class AccommodationController extends Controller
 {
@@ -11,7 +12,7 @@ class AccommodationController extends Controller
      */
     public function index()
     {
-        return view('accommodations.index');
+        
     }
 
     /**
@@ -35,7 +36,8 @@ class AccommodationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $accommodation = Accommodation::findOrFail($id);
+        return view('accommodations.show', compact('accommodation'));
     }
 
     /**

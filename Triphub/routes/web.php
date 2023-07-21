@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('ideas', IdeaController::class);
-Route::resource('accommdations', AccommodationController::class);
+Route::resource('accommodations', AccommodationController::class);
