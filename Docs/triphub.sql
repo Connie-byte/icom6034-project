@@ -8,7 +8,7 @@ VALUES (1, 'Shangri-La Hotel', '2015-10-01', '2015-10-03', 1.307, 103.826, '22 O
 
 -- accommodations_images 表
 INSERT INTO accommodations_images (id, accommodationId, path)
-VALUES (1, 1, 'http://www.shangri-la.com/uploadedImages/Shangri-la_Hotels/Shangri-La_Hotel_Singapore/rooms-suites/horizon-club/horizon-club-room-1.jpg');
+VALUES (1, 1, 'https://th.bing.com/th/id/R.6449d97766625ad1fe77d929feda85c8?rik=6o37sA93PRj3ug&pid=ImgRaw&r=0');
 
 -- ideas 表
 INSERT INTO ideas (id, title, destination, lat, lng, startDate, endDate, content, accommodationId, userId)
@@ -16,7 +16,7 @@ VALUES (1, 'My trip to Singapore', 'Singapore', 1.404, 103.793, '2015-10-01', '2
 
 -- ideas_images 表
 INSERT INTO ideas_images (id, ideaId, path)
-VALUES (1, 1, 'http://www.yoursingapore.com/content/traveller/en/browse/see-and-do/nature-and-wildlife/singapore-zoo/_jcr_content/par-carousel/carousel_detailpage/carousel/item_1.thumbnail.carousel-img.740.416.jpg');
+VALUES (1, 1, 'https://th.bing.com/th/id/OIP.Mz2x0OYKPAgNdIPVS8SJBAHaE7?w=249&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7');
 
 -- ideas_tags 表
 INSERT INTO ideas_tags (id, tagName, ideaId)
