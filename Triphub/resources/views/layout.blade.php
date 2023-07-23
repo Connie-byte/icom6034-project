@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Triphub</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="\css\global.css">
 </head>
 <body>
     <div class="container">

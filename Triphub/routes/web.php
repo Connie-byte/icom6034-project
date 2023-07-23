@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 Route::resource('ideas', IdeaController::class);
 Route::resource('accommodations', AccommodationController::class);
+Route::put('ideas/{idea}/accommodations/{accommodation}', [IdeaController::class, 'updateAccommodation'])->name('ideas.updateAccommodation');
+Route::post('ideas/{idea}/comments', [IdeaController::class, 'addComment'])->name('ideas.addComment');

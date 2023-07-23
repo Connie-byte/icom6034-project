@@ -30,6 +30,7 @@
 
 #leftColumn img {
     width: 100%;
+    object-fit: contain;
     padding-bottom: 10px;
 }
 
@@ -53,4 +54,19 @@
 #accommodationPrice {
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.accommodationImages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.accommodationImages img {
+    height: 270px;
+    object-fit: contain;
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

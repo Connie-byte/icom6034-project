@@ -9,6 +9,14 @@ class IdeasComment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'content',
+        'date',
+        'user_id',
+        'idea_id',
+        'commentInput',
+    ];
+
     public function idea()
     {
         return $this->belongsTo(Idea::class);
