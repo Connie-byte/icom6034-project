@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('tag_name');
             $table->unsignedBigInteger('idea_id');
+            $table->timestamps();
             
             $table->foreign('idea_id')->references('id')->on('ideas');
         });

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('accommodation_id');
             $table->string('path', 255);
+            $table->timestamps();
 
             $table->foreign('accommodation_id')->references('id')->on('accommodations');
         });
