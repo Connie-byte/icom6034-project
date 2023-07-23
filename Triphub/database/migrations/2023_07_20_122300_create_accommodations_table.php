@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('accommodations', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->float('lat')->nullable();
             $table->float('lng')->nullable();
             $table->string('address', 255)->nullable();
