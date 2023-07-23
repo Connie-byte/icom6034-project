@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Accommodation extends Model
 {
     use HasFactory;
+
+    public function images()
+    {
+        return $this->hasMany(AccommodationsImage::class);
+    }
+
 }
