@@ -1,24 +1,16 @@
+<!-- General Layout template with sections for content and sidebar -->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>@yield('title')</title>
+    <meta charset="UTF-8">
+    <title>Triphub</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <div class="container">
         @yield('content')
-    </main>
-    <footer>
-        <p>&copy; 2021 My Website</p>
-    </footer>
+    </div>
+
 </body>
 </html>
