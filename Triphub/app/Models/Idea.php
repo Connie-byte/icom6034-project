@@ -29,5 +29,9 @@ class Idea extends Model
         return $this->hasMany(IdeasTag::class);
     }
 
+    public function accommodation()
+    {
+        return $this->belongsTo(Accommodation::class);
+    }
 
 }
