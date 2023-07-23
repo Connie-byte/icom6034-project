@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Accommodation;
+use App\Models\User;
 
 class AccommodationController extends Controller
 {
@@ -11,7 +13,8 @@ class AccommodationController extends Controller
      */
     public function index()
     {
-        return view('accommodations.index');
+        $accommodations = Accommodation::all();
+        return view('accommodations.index', compact('accommodations'));
     }
 
     /**
@@ -35,7 +38,10 @@ class AccommodationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $accommodation = Accommodation::findOrFail($id);
+        $userId = 1;
+        $userIdeas = User::find($userId)->ideas;
+        return view('accommodations.show', compact('accommodation','userIdeas'));
     }
 
     /**

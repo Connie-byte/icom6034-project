@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ideas_comments', function (Blueprint $table) {
-            $table->id('commentId');
-            $table->unsignedBigInteger('ideaId');
-            $table->unsignedBigInteger('userId');
+            $table->id();
+            $table->unsignedBigInteger('idea_id');
+            $table->unsignedBigInteger('user_id');
             $table->dateTime('date');
             $table->string('content', 255);
+            $table->timestamps();
 
-            $table->foreign('ideaId')->references('ideaId')->on('ideas');
-            $table->foreign('userId')->references('id')->on('users');
+            $table->foreign('idea_id')->references('id')->on('ideas');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

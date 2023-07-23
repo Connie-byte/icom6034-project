@@ -12,21 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ideas', function (Blueprint $table) {
-            $table->id('ideaId');
+            $table->id();
             $table->string('title', 50);
             $table->string('destination', 50);
             $table->float('lat');
             $table->float('lng');
-            $table->string('image', 255)->nullable();
-            $table->dateTime('startDate');
-            $table->dateTime('endDate');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->string('content', 255);
-            $table->unsignedBigInteger('accommodationId')->nullable();
-            $table->unsignedBigInteger('userId');
+            $table->unsignedBigInteger('accommodation_id')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('accommodationId')->references('accommodationId')->on('accommodations');
-            $table->foreign('userId')->references('id')->on('users');
+            $table->foreign('accommodation_id')->references('id')->on('accommodations');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
