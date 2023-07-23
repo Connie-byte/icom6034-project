@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name', 255);
             $table->dateTime('startDate');
             $table->dateTime('endDate');
-            $table->string('image', 255)->nullable();
             $table->float('lat')->nullable();
             $table->float('lng')->nullable();
             $table->string('address', 255)->nullable();
