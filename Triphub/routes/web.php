@@ -24,10 +24,7 @@ Route::get('/', function () {
 
 Route::get('/map', [App\Http\Controllers\MapController::class, 'index']);
 Route::resource('ideas', IdeaController::class);
-
-Route::resource('accommdations', AccommodationController::class);
-
-
+Route::resource('accommodations', AccommodationController::class);
 Route::put('ideas/{idea}/accommodations/{accommodation}', [IdeaController::class, 'updateAccommodation'])->name('ideas.updateAccommodation');
 Route::post('ideas/{idea}/comments', [IdeaController::class, 'addComment'])->name('ideas.addComment');
 
