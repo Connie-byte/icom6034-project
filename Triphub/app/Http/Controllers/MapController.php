@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Idea;
 
 class MapController extends Controller
 {
 
-    public function searchIdea(string $destination)
-    {
-        echo("fffffffff");
-        return redirect()->route('ideas.show');
-    }
+    
     /**
      * Display a listing of the resource.
      */
@@ -33,6 +30,7 @@ class MapController extends Controller
         //
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -44,9 +42,10 @@ class MapController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $destination)
     {
-        //
+        $ideas = Idea::where('destination', $destination)->get();
+        return view('ideas.index', compact('ideas'));
     }
 
     /**

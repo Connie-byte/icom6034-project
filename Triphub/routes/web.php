@@ -27,7 +27,6 @@ Route::resource('map', MapController::class);
 Route::resource('ideas', IdeaController::class);
 Route::resource('accommodations', AccommodationController::class);
 Route::put('ideas/{idea}/accommodations/{accommodation}', [IdeaController::class, 'updateAccommodation'])->name('ideas.updateAccommodation');
-Route::get('map/{destination}', [MapController::class, 'searchIdea'])->name('map.searchIdea');
 Route::post('ideas/{idea}/comments', [IdeaController::class, 'addComment'])->name('ideas.addComment');
 
 Route::get('/destination/show', 'MapMarkerController@show');

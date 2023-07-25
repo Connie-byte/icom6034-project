@@ -68,30 +68,8 @@ function loadMap(id) {
                 title: i
               });
 
-
-              // Add a click event listener to each marker
               marker.addListener('click', function () {
-                // Make an AJAX request to the UserController@show method
-                $.ajax({
-                  type: 'GET',
-                  url: searchIdeaUrl + i,
-                  success: function (response) {
-                    // Handle the response data, which should contain the user information
-                    console.log('hihi')
-                    console.log(response.data);
-                  },
-                  error: function (xhr, status, error) {
-                    console.log('fail')
-                    // Handle any errors that occur during the AJAX request
-                    console.log(xhr.responseText);
-                  }
-                });
-
-
-
-
-
-
+                window.location.href= "http://127.0.0.1:8000/map/" + i;
               });
             } else {
               console.error('Invalid result from geocodeAddress():', result);
