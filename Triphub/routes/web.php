@@ -16,9 +16,11 @@ use App\Http\Controllers\MapController;
 |
 */
 
+
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
-Route::get('/map', [App\Http\Controllers\MapController::class, 'index']);
+Route::resource('map', MapController::class);
 Route::resource('ideas', IdeaController::class);
 Route::resource('accommodations', AccommodationController::class);
 Route::put('ideas/{idea}/accommodations/{accommodation}', [IdeaController::class, 'updateAccommodation'])->name('ideas.updateAccommodation');
 Route::post('ideas/{idea}/comments', [IdeaController::class, 'addComment'])->name('ideas.addComment');
+Route::get('/destination/show', 'MapMarkerController@show');
