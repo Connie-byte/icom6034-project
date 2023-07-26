@@ -19,7 +19,7 @@ class IndexController extends Controller
             $temp=IdeasTag::where('idea_id',$idea->id)->get('tag_name');
             $sum=' ';
             foreach ($temp as $t){
-                $sum=$sum.' '.$t->tagName.'       ';
+                $sum=$sum.' '.$t->tag_name.'       ';
             }
             $idea->tags=$sum;
         }
