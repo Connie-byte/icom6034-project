@@ -1,0 +1,72 @@
+#tripContainer {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+}
+
+#leftColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: black;
+}
+
+#rightColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+}
+
+#accommodationContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+}
+
+#leftColumn img {
+    width: 100%;
+    object-fit: contain;
+    padding-bottom: 10px;
+}
+
+#accommodationTitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#accommodationDate {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#accommodationLocation {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#accommodationPrice {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.accommodationImages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.accommodationImages img {
+    height: 270px;
+    object-fit: contain;
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

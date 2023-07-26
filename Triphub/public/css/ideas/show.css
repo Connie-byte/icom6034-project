@@ -1,0 +1,119 @@
+#tripContainer {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+}
+
+#leftColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: black;
+}
+
+#rightColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+}
+
+#ideaContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+}
+
+#commentContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+#tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    border-radius: 5px;
+}
+
+#leftColumn img {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+#ideaTitle {
+    flex: 1;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#ideaDate {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#ideaAuthor {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#ideaLocation {
+    flex: 1;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#ideaContent {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tags {
+    font-size: 10px;
+    color: #99f;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+#commentTitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.userComment {
+    flex: 1;
+}
+
+#commentForm {
+    margin-top: 50px;
+}
+
+#commentInput {
+    flex: 1;
+    font-size: 10px;
+
+}
+
+#commentAuthor {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+#commentDate {
+    float: right;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
