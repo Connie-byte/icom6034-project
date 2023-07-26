@@ -16,7 +16,7 @@ class IndexController extends Controller
 //        $ideas = Idea::all();
         $ideas=DB::table('ideas')->paginate(4);
         foreach ($ideas as $idea){
-            $temp=IdeasTag::where('ideaId',$idea->ideaId)->get('tagName');
+            $temp=IdeasTag::where('idea_id',$idea->id)->get('tag_name');
             $sum=' ';
             foreach ($temp as $t){
                 $sum=$sum.' '.$t->tagName.'       ';

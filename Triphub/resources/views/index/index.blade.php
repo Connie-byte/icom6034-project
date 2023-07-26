@@ -45,8 +45,8 @@
                 <div  class="mb-5 mt-3 d-flex" style="flex-direction: row;">
                     <div class="idea_image"><img src="/img/caption.jpg" alt="" height="400" width="500" style="border-radius: 10px;"></div>
                     <div class="d-flex" style="flex-direction: column;margin-left: 10px;">
-                        <div class="ideas_id"><h3>{{$idea->ideaId}}</h3></div>
-                        <div class="title"><h4><a href="{{ route('ideas.show',$idea->ideaId)}}">{{$idea->title}}</a></h4></div>
+                        <div class="ideas_id"><h3>{{$idea->id}}</h3></div>
+                        <div class="title"><h4><a href="{{ route('ideas.show',$idea->id)}}">{{$idea->title}}</a></h4></div>
                         <div class="destination d-flex" style="flex-direction: row;align-items: center;font-weight: bolder;font-size:18px;">
                             <img src="/img/location.svg" alt="" height="16" width="16">{{$idea->destination}}
                         </div>
@@ -58,19 +58,19 @@
                         <div class="ideas_date d-flex" style="flex-direction: column;margin-top: 10px;justify-content: space-between;">
                             <div class="start_date"><svg viewBox="0 0 24 24" width="20px" height="20px" class="d Vb UmNoP">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M6.713 3.982a9.994 9.994 0 00-4.734 8.502c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.522-4.477-10-10-10v1.5a8.5 8.5 0 11-5.266 1.828v-1.83z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.323 4.935h-3.55v-1.5h5.05v5.05h-1.5v-3.55zM11.333 13.034v-5.36h1.5v5.457c0 .312-.116.612-.326.842l-2.765 3.033-1.109-1.01 2.7-2.962z"></path></svg>
-                                start date:{{date('Y-m-d', strtotime($idea->startDate))}}
+                                start date:{{date('Y-m-d', strtotime($idea->start_date))}}
 
                             </div>
                             <div class="end_date">
                                 <svg viewBox="0 0 24 24" width="20px" height="20px" class="d Vb UmNoP"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.713 3.982a9.994 9.994 0 00-4.734 8.502c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.522-4.477-10-10-10v1.5a8.5 8.5 0 11-5.266 1.828v-1.83z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.323 4.935h-3.55v-1.5h5.05v5.05h-1.5v-3.55zM11.333 13.034v-5.36h1.5v5.457c0 .312-.116.612-.326.842l-2.765 3.033-1.109-1.01 2.7-2.962z"></path></svg>
-                                end date:{{date('Y-m-d', strtotime($idea->endDate))}}
+                                end date:{{date('Y-m-d', strtotime($idea->end_date))}}
                             </div>
                         </div>
                     </div>
-{{--                    <div>title:<a href="{{ route('ideas.show',$idea->ideaId)}}"></a></div>--}}
+{{--                    <div>title:<a href="{{ route('ideas.show',$idea->idea_id)}}"></a></div>--}}
 {{--                    <div>destination:</div>--}}
-{{--                    <div>startDate:{{$idea->startDate}}</div>--}}
-{{--                    <div>endDate:{{$idea->endDate}}</div>--}}
+{{--                    <div>startDate:{{$idea->start_date}}</div>--}}
+{{--                    <div>endDate:{{$idea->end_date}}</div>--}}
 {{--                    <div>tags:{{$idea->tags}}</div>--}}
                 </div>
             @endforeach

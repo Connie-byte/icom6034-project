@@ -17,9 +17,6 @@ use App\Http\Controllers\MapController;
 */
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
-
-
-
 Route::get('/map', [App\Http\Controllers\MapController::class, 'index']);
 Route::resource('ideas', IdeaController::class);
 Route::resource('accommodations', AccommodationController::class);
