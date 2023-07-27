@@ -2,13 +2,61 @@
 @include('common.commoncss')
 @include('common.commonjs')
 @section('content')
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         {{--   first row --}}
     <div class="d-flex" style="justify-content: space-between;margin-top:10px;">
         <div class="logo" style="font-weight: bolder;color:blue;">Triphub</div>
         <div>
-            <a class="btn btn-primary">Create ideas</a>
-            <a class="btn btn-primary">register</a>
-            <a class="btn btn-primary">login</a>
+            @guest
+
+                @if(Illuminate\Support\Facades\Route::has('login'))
+                    <div class="d-flex" style="flex-direction: row">
+                        <div style="margin-right:20px;"><a class="btn btn-primary" href="{{ route('ideas.create')}}">Create ideas</a></div>
+                        <div style="margin-right:20px;"><a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a></div>
+                        @if(Illuminate\Support\Facades\Route::has('register'))
+                            <div style="margin-right:20px;"><a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a></div>
+                        @endif
+                    </div>
+
+
+                @endif
+
+            @else
+                <div class="d-flex" style="flex-direction: row;">
+                    <div style="margin-right:20px;">
+                        <a class="btn btn-primary" href="{{ route('ideas.create')}}">Create ideas</a>
+                    </div>
+                    <div>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('ideas.mylist', ['user' => Auth::user()]) }}">
+                                        {{ __('my idea list') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            @endguest
+{{--            <a class="btn btn-primary" href="{{ route('ideas.create')}}">Create ideas</a>--}}
+{{--            <a class="btn btn-primary" href="{{ route('register')}}">register</a>--}}
+{{--            <a class="btn btn-primary" href="{{ route('login') }}">login</a>--}}
         </div>
 
     </div>

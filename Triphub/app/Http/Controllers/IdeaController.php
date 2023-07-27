@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Idea;
 use App\Models\IdeasComment;
 use App\Models\Accommodation;
+use App\Models\IdeasTag;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
@@ -19,12 +22,31 @@ class IdeaController extends Controller
         $ideas = Idea::all();
         return view('ideas.index', compact('ideas'));
     }
+    public function mylist(User $user)
+    {
+
+        $ideas=DB::table('ideas')->where('userId',$user->id)->paginate(4);
+        foreach ($ideas as $idea){
+            $temp=IdeasTag::where('ideaId',$idea->ideaId)->get('tagName');
+            $sum=' ';
+            foreach ($temp as $t){
+                $sum=$sum.' '.$t->tagName.'       ';
+            }
+            $idea->tags=$sum;
+        }
+//        $ideas = Idea::where('userId',$user->id)->get();
+//        dd($ideas);
+        return view('index.index', compact('ideas'));
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
+        if(!\Illuminate\Support\Facades\Auth::user()){
+            return redirect('login');
+        }
         return view('ideas.create');
     }
 
@@ -84,7 +106,7 @@ class IdeaController extends Controller
         $validator = Validator::make($request->all(), [
             'commentInput' => 'required|max:255',
         ]);
-    
+
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }

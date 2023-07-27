@@ -17,11 +17,13 @@ use App\Http\Controllers\MapController;
 */
 
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
-
+Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
+Auth::routes();
 
 
 Route::get('/map', [App\Http\Controllers\MapController::class, 'index']);
 Route::resource('ideas', IdeaController::class);
+Route::get('ideas/{user}/mylist', [IdeaController::class, 'mylist'])->name('ideas.mylist');
 Route::resource('accommodations', AccommodationController::class);
 Route::put('ideas/{idea}/accommodations/{accommodation}', [IdeaController::class, 'updateAccommodation'])->name('ideas.updateAccommodation');
 Route::post('ideas/{idea}/comments', [IdeaController::class, 'addComment'])->name('ideas.addComment');
