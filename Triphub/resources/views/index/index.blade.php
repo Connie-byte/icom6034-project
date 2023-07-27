@@ -11,6 +11,7 @@
 
                 @if(Illuminate\Support\Facades\Route::has('login'))
                     <div class="d-flex" style="flex-direction: row">
+                        <div style="margin-right:20px;"><a class="btn btn-primary" href="{{ route('map')}}">Map</a></div>
                         <div style="margin-right:20px;"><a class="btn btn-primary" href="{{ route('ideas.create')}}">Create ideas</a></div>
                         <div style="margin-right:20px;"><a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a></div>
                         @if(Illuminate\Support\Facades\Route::has('register'))
@@ -24,6 +25,7 @@
             @else
                 <div class="d-flex" style="flex-direction: row;">
                     <div style="margin-right:20px;">
+                        <a class="btn btn-primary" href="{{ route('map')}}">Map</a>
                         <a class="btn btn-primary" href="{{ route('ideas.create')}}">Create ideas</a>
                     </div>
                     <div>
@@ -54,9 +56,7 @@
                 </div>
 
             @endguest
-{{--            <a class="btn btn-primary" href="{{ route('ideas.create')}}">Create ideas</a>--}}
-{{--            <a class="btn btn-primary" href="{{ route('register')}}">register</a>--}}
-{{--            <a class="btn btn-primary" href="{{ route('login') }}">login</a>--}}
+
         </div>
 
     </div>
@@ -72,8 +72,8 @@
                         </select>
                         <input type="text" id="searchContent"  name="searchContent"   style="height: 80%;"></input>
                         <div class="form-check form-check-inline" style="margin-left: 10px">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="partial">
-                            <label class="form-check-label" for="inlineCheckbox1">Partial Math</label>
+                            <input class="form-check-input" type="checkbox" id="Partial" value="partial">
+                            <label class="form-check-label" for="Partial">Partial Match</label>
                         </div>
                         <button type="button" class="btn btn-primary" name="search"  id="search">Find ideas!</button>
                     </div>
@@ -115,11 +115,7 @@
                             </div>
                         </div>
                     </div>
-{{--                    <div>title:<a href="{{ route('ideas.show',$idea->ideaId)}}"></a></div>--}}
-{{--                    <div>destination:</div>--}}
-{{--                    <div>startDate:{{$idea->startDate}}</div>--}}
-{{--                    <div>endDate:{{$idea->endDate}}</div>--}}
-{{--                    <div>tags:{{$idea->tags}}</div>--}}
+
                 </div>
             @endforeach
             {{$ideas->links()}}
@@ -128,3 +124,64 @@
 
 
 @endsection
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $('#search').on('click',function(){
+            $searchcategory=$('#searchcategory').val()
+            $search=$('#searchContent').val()
+            $Partial=$('#Partial').is(':checked')
+
+            $.ajax({
+                type : 'get',
+                url : '{{URL::to('search')}}',
+                data:{'search':$search,'searchcategory':$searchcategory,'Partial':$Partial},
+                success:function(data){
+                    $('#seach_body').html(data);
+                }
+            });
+
+            // const settings = {
+            //     async: true,
+            //     crossDomain: true,
+            //     url: 'https://the-weather-api.p.rapidapi.com/api/weather/'+$search,
+            //     method: 'GET',
+            //     headers: {
+            //         'X-RapidAPI-Key': '5981101b95mshb092f84a0d77a4bp1c6dc0jsn54a7b6472226',
+            //         'X-RapidAPI-Host': 'the-weather-api.p.rapidapi.com'
+            //     }
+            // };
+            // if($searchcategory=='destination'){
+            //     $.ajax(settings).done(function (response) {
+            //         let html='';
+            //         let data=response['data'];
+            //
+            //         var d = new Date();
+            //         var strDate = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
+            //         let city=$search
+            //         let current_weather=data.current_weather
+            //         let humidity=data.humidity
+            //         let wind=data.wind
+            //         let temp=data.temp
+            //         $('#row1').remove()
+            //         html+='<tr id="row1">'+
+            //             '<td>' + strDate + '</td>' +
+            //             '<td>' + city + '</td>' +
+            //             '<td>' + current_weather + '</td>' +
+            //             '<td>' + humidity + '</td>' +
+            //             '<td>' + wind + '</td>' +
+            //             '<td>' + temp + '</td>' +
+            //             '</tr>';
+            //
+            //         $('#weathertable tr').first().after(html);
+            //     });
+            // }
+
+
+
+        })
+    })
+
+</script>

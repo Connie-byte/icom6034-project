@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Idea;
+
 use Illuminate\Http\Request;
 use App\Models\IdeasTag;
 use Illuminate\Support\Facades\DB;
@@ -14,15 +14,19 @@ class IndexController extends Controller
     public function index()
     {
 //        $ideas = Idea::all();
+
+
         $ideas=DB::table('ideas')->paginate(4);
         foreach ($ideas as $idea){
             $temp=IdeasTag::where('ideaId',$idea->ideaId)->get('tagName');
             $sum=' ';
             foreach ($temp as $t){
-                $sum=$sum.' '.$t->tagName.'       ';
-            }
+                    $sum=$sum.' '.$t->tagName.'       ';
+                }
             $idea->tags=$sum;
-        }
+            }
+
+
         return view('index.index', compact('ideas'));
     }
 

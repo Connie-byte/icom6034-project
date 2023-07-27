@@ -4,7 +4,7 @@ use App\Http\Controllers\AccommodationController;
 use App\Http\Controllers\IdeaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MapController;
-
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +21,10 @@ Route::get('/home', [App\Http\Controllers\IndexController::class, 'index']);
 Auth::routes();
 
 
-Route::get('/map', [App\Http\Controllers\MapController::class, 'index']);
+Route::get('/map', [App\Http\Controllers\MapController::class, 'index'])->name('map');
 Route::resource('ideas', IdeaController::class);
 Route::get('ideas/{user}/mylist', [IdeaController::class, 'mylist'])->name('ideas.mylist');
 Route::resource('accommodations', AccommodationController::class);
 Route::put('ideas/{idea}/accommodations/{accommodation}', [IdeaController::class, 'updateAccommodation'])->name('ideas.updateAccommodation');
 Route::post('ideas/{idea}/comments', [IdeaController::class, 'addComment'])->name('ideas.addComment');
+Route::get('/search',[SearchController::class,'search']);
